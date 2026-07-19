@@ -47,7 +47,7 @@ If nobody reliably owns the recurring source check, [Medicare Roster Watch](http
 
 ## One-time operations dashboard
 
-If the team wants an owned queue without a subscription, the [Medicare Revalidation Operations Dashboard](https://actablesite.com/medicare-revalidation-operations-dashboard?utm_source=github&utm_medium=repository&utm_campaign=medicare_revalidation_dashboard) is **$12 once**. The downloaded HTML file checks up to 100 known NPIs against the current public CMS list, keeps owners and next actions in the buyer's browser, and exports source-dated CSV and calendar files. It is not live PECOS status and should not contain patient data, passwords, credentials, or private enrollment documents.
+If the team wants an owned queue without a subscription, the [Medicare Revalidation Operations Dashboard](https://actablesite.com/api/medicare-revalidation-dashboard-referral?source=github_tracker_readme) is **$12 once**. The downloaded HTML file checks up to 100 known NPIs against the current public CMS list, keeps owners and next actions in the buyer's browser, and exports source-dated CSV and calendar files. It is not live PECOS status and should not contain patient data, passwords, credentials, or private enrollment documents.
 
 ## Official sources
 
