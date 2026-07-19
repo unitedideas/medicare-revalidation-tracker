@@ -41,13 +41,13 @@ The public CMS list reports an established revalidation due date or `TBD`. It do
 
 Do not store protected health information, passwords, PECOS credentials, or private enrollment documents in this template.
 
-## Automatic alternative
-
-If nobody reliably owns the recurring source check, [Medicare Roster Watch](https://actablesite.com/api/medicare-roster-watch-referral?source=github_tracker_readme) monitors up to 20 known NPIs against public CMS revalidation and pending-enrollment sources for **$9 per month**. It sends one dated baseline and then email only when a watched public record changes or reaches a due-date reminder stage. Stripe handles renewal and cancellation; monitoring activates automatically after a successful checkout with a valid roster.
-
 ## One-time operations dashboard
 
 If the team wants an owned queue without a subscription, the [Medicare Revalidation Operations Dashboard](https://actablesite.com/api/medicare-revalidation-dashboard-referral?source=github_tracker_readme) is **$12 once**. The downloaded HTML file checks up to 100 known NPIs against the current public CMS list, keeps owners and next actions in the buyer's browser, and exports source-dated CSV and calendar files. It is not live PECOS status and should not contain patient data, passwords, credentials, or private enrollment documents.
+
+## Automatic alternative
+
+If nobody reliably owns the recurring source check, [Medicare Roster Watch](https://actablesite.com/api/medicare-roster-watch-referral?source=github_tracker_readme) monitors up to 20 known NPIs against public CMS revalidation and pending-enrollment sources for **$9 per month**. It sends one dated baseline and then email only when a watched public record changes or reaches a due-date reminder stage. Stripe handles renewal and cancellation; monitoring activates automatically after a successful checkout with a valid roster.
 
 ## Official sources
 
