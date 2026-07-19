@@ -26,7 +26,7 @@ For the full field guide and interpretation rules, see the [Medicare revalidatio
 
 ## Preview an automated check
 
-This repository includes a manual GitHub workflow that produces a current, source-dated JSON artifact. Its default preview checks two disclosed public demonstration NPIs without an account, token, Apify run, or charge:
+This repository includes a manual GitHub workflow built on `unitedideas/medicare-revalidation-action@v1` that produces a current, source-dated JSON artifact. Its default preview checks two disclosed public demonstration NPIs without an account, token, Apify run, or charge:
 
 1. Create your own repository from this template.
 2. Open **Actions → Check Medicare revalidation roster → Run workflow**.
