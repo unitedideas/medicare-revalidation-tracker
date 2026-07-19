@@ -2,7 +2,7 @@
 
 A free, source-aware spreadsheet and workflow template for credentialing, provider-enrollment, medical-billing, and provider-operations teams tracking a known roster of Medicare NPIs.
 
-[Download the CSV template](https://github.com/unitedideas/medicare-revalidation-tracker/releases/latest/download/medicare-revalidation-tracker.csv), preview the [version-controlled source](./medicare-revalidation-tracker.csv), or [create a private copy of this repository](https://github.com/new?template_name=medicare-revalidation-tracker&template_owner=unitedideas). The CSV opens in Excel, Numbers, or Google Sheets.
+[Download the CSV template](https://github.com/unitedideas/medicare-revalidation-tracker/releases/latest/download/medicare-revalidation-tracker.csv), preview the [version-controlled source](./medicare-revalidation-tracker.csv), or [create your own copy of this repository](https://github.com/new?template_name=medicare-revalidation-tracker&template_owner=unitedideas). The CSV opens in Excel, Numbers, or Google Sheets.
 
 ## What it preserves
 
