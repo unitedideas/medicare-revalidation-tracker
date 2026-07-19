@@ -1,0 +1,69 @@
+name: Check Medicare revalidation roster
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Free demo or your own NPI roster
+        required: true
+        default: preview
+        type: choice
+        options:
+          - preview
+          - roster
+      npis:
+        description: Comma- or space-separated NPIs; used only for roster mode
+        required: false
+        type: string
+      max_total_charge_usd:
+        description: Hard cap for roster mode; minimum is $0.01 per NPI plus $0.05
+        required: true
+        default: "0.10"
+        type: string
+      compare_with_previous:
+        description: Compare a funded roster run with its prior matching run
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - id: revalidation
+        uses: unitedideas/medicare-revalidation-action@v1
+        with:
+          preview: ${{ inputs.mode == 'preview' }}
+          npis: ${{ inputs.npis }}
+          apify-token: ${{ secrets.APIFY_TOKEN }}
+          max-total-charge-usd: ${{ inputs.max_total_charge_usd }}
+          compare-with-previous: ${{ inputs.compare_with_previous }}
+
+      - name: Summarize the source-dated result
+        shell: bash
+        env:
+          RECORD_COUNT: ${{ steps.revalidation.outputs.record-count }}
+          CHECKED_AT: ${{ steps.revalidation.outputs.checked-at }}
+          DATED_COUNT: ${{ steps.revalidation.outputs.dated-count }}
+          TBD_COUNT: ${{ steps.revalidation.outputs.tbd-count }}
+        run: |
+          {
+            echo "## Medicare revalidation result"
+            echo
+            echo "- Checked at: ${CHECKED_AT}"
+            echo "- Result rows: ${RECORD_COUNT}"
+            echo "- Rows with an established date: ${DATED_COUNT}"
+            echo "- Rows with TBD status: ${TBD_COUNT}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: ${{ inputs.mode == 'preview' && 'medicare-revalidation-demo' || 'medicare-revalidation-results' }}
+          path: ${{ steps.revalidation.outputs.output-file }}
+          if-no-files-found: error
+          retention-days: 30

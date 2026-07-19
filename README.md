@@ -1,8 +1,8 @@
 # Medicare Revalidation Tracker
 
-A free, source-aware spreadsheet template for credentialing, provider-enrollment, medical-billing, and provider-operations teams tracking a known roster of Medicare NPIs.
+A free, source-aware spreadsheet and workflow template for credentialing, provider-enrollment, medical-billing, and provider-operations teams tracking a known roster of Medicare NPIs.
 
-[Download the CSV template](https://github.com/unitedideas/medicare-revalidation-tracker/releases/latest/download/medicare-revalidation-tracker.csv) or preview the [version-controlled source](./medicare-revalidation-tracker.csv). It opens in Excel, Numbers, or Google Sheets.
+[Download the CSV template](https://github.com/unitedideas/medicare-revalidation-tracker/releases/latest/download/medicare-revalidation-tracker.csv), preview the [version-controlled source](./medicare-revalidation-tracker.csv), or [create a private copy of this repository](https://github.com/new?template_name=medicare-revalidation-tracker&template_owner=unitedideas). The CSV opens in Excel, Numbers, or Google Sheets.
 
 ## What it preserves
 
@@ -24,6 +24,17 @@ The first blank data row contains the formulas. Duplicate that row for the rest 
 
 For the full field guide and interpretation rules, see the [Medicare revalidation tracking spreadsheet guide](https://actablesite.com/medicare-revalidation-tracking-spreadsheet?utm_source=github&utm_medium=repository&utm_campaign=medicare_revalidation_tracker).
 
+## Preview an automated check
+
+This repository includes a manual GitHub workflow that produces a current, source-dated JSON artifact. Its default preview checks two disclosed public demonstration NPIs without an account, token, Apify run, or charge:
+
+1. Create your own repository from this template.
+2. Open **Actions → Check Medicare revalidation roster → Run workflow**.
+3. Leave **preview** selected and run it.
+4. Download `medicare-revalidation-demo` from the completed workflow run.
+
+To check your own 1–100 NPI roster, add an Apify API token as the repository secret `APIFY_TOKEN`, select **roster**, and enter the NPIs. The workflow refuses invalid NPI check digits and an insufficient hard charge cap before starting a paid run. A complete run costs **$0.01 per returned NPI plus buyer-paid Apify platform usage** and fulfills the JSON automatically.
+
 ## Important boundary
 
 The public CMS list reports an established revalidation due date or `TBD`. It does not prove that a revalidation was submitted, received, approved, or completed. Verify live application status through PECOS and the responsible Medicare Administrative Contractor.
@@ -32,7 +43,7 @@ Do not store protected health information, passwords, PECOS credentials, or priv
 
 ## Automatic alternative
 
-If nobody reliably owns the recurring source check, [Medicare Roster Watch](https://actablesite.com/pending-medicare-roster-watch?utm_source=github&utm_medium=repository&utm_campaign=medicare_revalidation_tracker) monitors up to 20 known NPIs against public CMS revalidation and pending-enrollment sources. It sends one dated baseline and then email only when a watched public record changes.
+If nobody reliably owns the recurring source check, [Medicare Roster Watch](https://actablesite.com/pending-medicare-roster-watch?utm_source=github&utm_medium=repository&utm_campaign=medicare_revalidation_tracker) monitors up to 20 known NPIs against public CMS revalidation and pending-enrollment sources for **$9 per month**. It sends one dated baseline and then email only when a watched public record changes or reaches a due-date reminder stage. Stripe handles renewal and cancellation; monitoring activates automatically after a successful checkout with a valid roster.
 
 ## Official sources
 
