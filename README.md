@@ -43,7 +43,7 @@ Do not store protected health information, passwords, PECOS credentials, or priv
 
 ## Automatic alternative
 
-If nobody reliably owns the recurring source check, [Medicare Roster Watch](https://actablesite.com/pending-medicare-roster-watch?utm_source=github&utm_medium=repository&utm_campaign=medicare_revalidation_tracker) monitors up to 20 known NPIs against public CMS revalidation and pending-enrollment sources for **$9 per month**. It sends one dated baseline and then email only when a watched public record changes or reaches a due-date reminder stage. Stripe handles renewal and cancellation; monitoring activates automatically after a successful checkout with a valid roster.
+If nobody reliably owns the recurring source check, [Medicare Roster Watch](https://actablesite.com/api/medicare-roster-watch-referral?source=github_tracker_readme) monitors up to 20 known NPIs against public CMS revalidation and pending-enrollment sources for **$9 per month**. It sends one dated baseline and then email only when a watched public record changes or reaches a due-date reminder stage. Stripe handles renewal and cancellation; monitoring activates automatically after a successful checkout with a valid roster.
 
 ## Official sources
 
